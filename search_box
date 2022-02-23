@@ -1,0 +1,80 @@
+var company=[ 
+    {
+        productName: "Regular White T-Shirt",
+        category: "Topwear",
+        price: "30",
+       
+      },
+      {
+        productName: "Beige Short Skirt",
+        category: "Bottomwear",
+        price: "49",
+       
+      },
+      {
+        productName: "Sporty SmartWatch",
+        category: "Watch",
+        price: "99",
+      },
+      {
+        productName: "Basic Knitted Top",
+        category: "Topwear",
+        price: "29",
+      },
+      {
+        productName: "Black Leather Jacket",
+        category: "Jacket",
+        price: "129",
+      },
+      {
+        productName: "Stylish Pink Trousers",
+        category: "Bottomwear",
+        price: "89",
+      },
+      {
+        productName: "Brown Men's Jacket",
+        category: "Jacket",
+        price: "189",
+      },
+      {
+        productName: "Comfy Gray Pants",
+        category: "Bottomwear",
+        price: "49",
+      }];
+      function loadData(){
+           var tb1="<table border=`1` width='500'><tr><th>Product_Name</th><th>Category</th><th>Price</th></tr>"
+          company.forEach(function(getvalue){
+              tb1+=`<tr><th>${getvalue.productName}</th><th>${getvalue.category}</th><th>${getvalue.price}</th></tr>`
+          })
+          
+         document.getElementById("msg").innerHTML = tb1;
+      }
+      function filter()
+        {
+          var tb1="<table border=`1` width='500'><tr><th>Product_Name</th><th>Category</th><th>Price</th></tr>"
+            var x =document.getElementById('search').value;
+            var b= company.filter(function(a){
+              if(a.productName==x)
+              {
+                return a.productName==x;
+              }
+              else if(a.category==x)
+              {
+                return a.category==x;
+              }
+               else
+              {
+                return a.price==x;
+              }
+               
+               
+               
+            })
+            
+            b.forEach(function(getvalue){
+              tb1+=`<tr><th>${getvalue.productName}</th><th>${getvalue.category}</th><th>${getvalue.price}</th></tr>`
+          
+          }); document.getElementById("msg").innerHTML = tb1;
+        }
+      
+      
